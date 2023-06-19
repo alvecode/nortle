@@ -25,9 +25,9 @@ export const Keyboard = ({
   const charStatuses = getStatuses(solution, guesses)
 
   const onClick = (value: string) => {
-    if (value === 'ВВОД') {
+    if (value === 'ENTER') {
       onEnter()
-    } else if (value === 'ОТМЕНА') {
+    } else if (value === 'DELETE') {
       onDelete()
     } else {
       onChar(value)
@@ -79,7 +79,7 @@ export const Keyboard = ({
         ))}
       </div>
       <div className="flex justify-center">
-        <Key width={65.4} value="ОТМЕНА" onClick={onClick}>
+        <Key width={65.4} value="DELETE" onClick={onClick}>
           {DELETE_TEXT}
         </Key>
         {['Я', 'Ч', 'С', 'М', 'И', 'Т', 'Ь', 'Б', 'Ю'].map((key) => (
@@ -91,7 +91,7 @@ export const Keyboard = ({
             isRevealing={isRevealing}
           />
         ))}
-        <Key width={65.4} value="ВВОД" onClick={onClick}>
+        <Key width={65.4} value="ENTER" onClick={onClick}>
           {ENTER_TEXT}
         </Key>
       </div>
