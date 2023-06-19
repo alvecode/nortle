@@ -25,9 +25,9 @@ export const Keyboard = ({
   const charStatuses = getStatuses(solution, guesses)
 
   const onClick = (value: string) => {
-    if (value === 'ENTER') {
+    if (value === 'ВВОД') {
       onEnter()
-    } else if (value === 'DELETE') {
+    } else if (value === 'ОТМЕНА') {
       onDelete()
     } else {
       onChar(value)
@@ -43,7 +43,7 @@ export const Keyboard = ({
       } else {
         const key = localeAwareUpperCase(e.key)
         // TODO: check this test if the range works with non-english letters
-        if (key.length === 1 && key >= 'A' && key <= 'Z') {
+        if (key.length === 1 && key >= 'А' && key <= 'Я') {
           onChar(key)
         }
       }
